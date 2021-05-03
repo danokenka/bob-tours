@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class BobToursService {
 
   //decalred a base url containing the root path to our database call
-  baseUrl = 'https://bob-tours-app.firebaseio.com/';  
+  baseUrl = 'https://bob-tours-app-7f7b9-default-rtdb.firebaseio.com/';  
 
   //inject http client in constructor
   constructor(private http: HttpClient) {}  
