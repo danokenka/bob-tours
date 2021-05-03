@@ -7,6 +7,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+<ion-list>
+  <!-- the *ngFor Closure ensure that a separate list entry is created for each region read to database -->
+  <ion-item *ngFor="let region of regions">
+    {{ region.Name }}
+  </ion-item>
+</ion-list>
 </ion-content>
