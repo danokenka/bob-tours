@@ -10,7 +10,9 @@
 <ion-content class="ion-padding">
   <ion-list>
     <!-- the *ngFor Closure ensure that a separate list entry is created for each region read to database -->
-    <ion-item *ngFor="let tour of tours">
+    <ion-item *ngFor="let tour of tours"
+                      [routerLink]="'/details/' + tour.ID"
+                      routerDirection="forward">>
       {{ tour.Title }}
     </ion-item>
   </ion-list>
