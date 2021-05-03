@@ -10,7 +10,14 @@
 <ion-content class="ion-padding">
 <ion-list>
   <!-- the *ngFor Closure ensure that a separate list entry is created for each region read to database -->
-  <ion-item *ngFor="let region of regions">
+  <ion-item *ngFor="let region of regions"
+                    [routerLink]="['/list',
+                    { Category: 'Region',
+                      Criteria: region.ID,
+                      Name: region.Name
+
+                    }]"
+                    routerDirection="forward">
     {{ region.Name }}
   </ion-item>
 </ion-list>

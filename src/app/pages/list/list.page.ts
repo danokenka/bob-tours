@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BobToursService } from 'src/app/services/bob-tours.service';
+import { ActivatedRoute } from '@angular/router';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
-  constructor() { }
+  tours: any;
+  selection: any;
+
+  constructor(
+    private btService: BobToursService,
+    private activedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.selection = this.activedRoute.snapshot.params;
+    let category = this.selection.Category;
+    let criteria = this.selection.Criteria
+    this.tours = _. filter(
+      this.btService.tours,
+      [ category, criteria ]
+    );
+
   }
 
 }

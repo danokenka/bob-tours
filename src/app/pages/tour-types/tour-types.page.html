@@ -10,7 +10,15 @@
 <ion-content>
   <ion-list>
     <!-- the *ngFor Closure ensure that a separate list entry is created for each region read to database -->
-    <ion-item *ngFor="let tourtype of tourtypes">
+    <ion-item *ngFor="let tourtype of tourtypes"
+                      [routerLink]="['/list',
+                      {
+                        Category: 'Tourtype',
+                        Criteria: tourtype.ID,
+                        Name: tourtype.Name
+                      }
+                      ]"
+                      routerDirection="forward">
       {{ tourtype.Name }}
     </ion-item>
   </ion-list>
