@@ -13,12 +13,18 @@ export class RegionsPage implements OnInit {
 
   constructor(private btService: BobToursService) { }
 
+  // //Old call
+  // ngOnInit() {
+  //   // calls the service as a promise handling async delivery of data with then() construct
+  //   this.btService.getRegions()
+  //   // Lamba expressions "data => this.regions = data"
+  //   // Means if data arrives pass that data to this.regions..our local page variable
+  //   .then(data => this.regions = data);
+  // }
+
+
   ngOnInit() {
-    // calls the service as a promise handling async delivery of data with then() construct
-    this.btService.getRegions()
-    // Lamba expressions "data => this.regions = data"
-    // Means if data arrives pass that data to this.regions..our local page variable
-    .then(data => this.regions = data);
+    this.regions = this.btService.regions;
   }
 
 }
